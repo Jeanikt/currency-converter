@@ -25,7 +25,7 @@ A simple, real-time currency converter built with Next.js and React.
 
 ## Installation
 
-1. Clone the repository: `git clone <repository_url>`
+1. Clone the repository: `git clone https://github.com/Jeanikt/currency-converter.git`
 2. Navigate to the project directory: `cd currency-converter`
 3. Install dependencies: `npm install` or `yarn install`
 
