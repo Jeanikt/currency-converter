@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Currency Converter
 
-## Getting Started
+A simple, real-time currency converter built with Next.js and React.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Convert between multiple currencies (USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY, BRL)
+- Real-time exchange rates using the Currency Freaks API
+- Conversion history tracking
+- Responsive design for mobile and desktop
+- Dark mode UI
+- Multi-language support (English, Portuguese, Spanish)
+- Smooth animations using Framer Motion
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) - React framework for building the application
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Re-usable components built with Radix UI and Tailwind CSS
+- [Lucide React](https://lucide.dev/) - Icon set for React
+- [Framer Motion](https://www.framer.com/motion/) - Animation library for React
+- [Currency Freaks API](https://currencyfreaks.com/) - Real-time exchange rate API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+1. Clone the repository: `git clone <repository_url>`
+2. Navigate to the project directory: `cd currency-converter`
+3. Install dependencies: `npm install` or `yarn install`
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project, you will need to add the following environment variables to your .env.local file:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`NEXT_PUBLIC_CURRENCY_API_KEY`
 
-## Deploy on Vercel
+For development purposes, you can use the API key provided in the code. For production, please use your own API key.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses the Currency Freaks API for real-time exchange rates. The API key is already integrated into the project. However, for security reasons, it's recommended to use environment variables for API keys in a production environment.
+
+To use your own API key:
+
+1. Sign up for a free account at [Currency Freaks](https://currencyfreaks.com/)
+2. Get your API key from the dashboard
+3. Create a `.env.local` file in the root of your project
+4. Add your API key to the `.env.local` file:
+   \`\`\`
+   NEXT_PUBLIC_CURRENCY_API_KEY=your_api_key_here
+   \`\`\`
+5. Update the fetch URL in `components/currency-converter.tsx`:
+   \`\`\`typescript
+   const response = await fetch(`https://api.currencyfreaks.com/v2.0/rates/latest?apikey=${process.env.NEXT_PUBLIC_CURRENCY_API_KEY}`);
+   \`\`\`
+
+Remember to add `.env.local` to your `.gitignore` file to keep your API key secret.
+
+## Usage
+
+1. Run the development server: `npm run dev` or `yarn dev`
+2. Open your browser and go to `http://localhost:3000`
+
+## Contributing
+
+Contributions are welcome! Please feel free to open an issue or submit a pull request.
+
+
+## License
+
+This project is licensed under the MIT License.
+
