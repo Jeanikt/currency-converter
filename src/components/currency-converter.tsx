@@ -89,14 +89,14 @@ export function CurrencyConverter() {
   }, [convert]);
 
   return (
-    <div className="grid gap-8 md:grid-cols-2 auto-rows-fr overflow-hidden">
+    <div className="grid gap-4 sm:gap-8 grid-cols-1 lg:grid-cols-2 auto-rows-fr overflow-hidden">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <Card className="bg-gray-900/50 border-gray-800 overflow-hidden flex flex-col">
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <div className="grid gap-4">
               <div className="grid gap-2">
                 <label className="text-sm text-gray-400">{t("amount")}</label>
@@ -155,7 +155,7 @@ export function CurrencyConverter() {
                   className="mt-4 p-4 bg-gray-800/50 rounded-lg"
                 >
                   <div className="text-sm text-gray-400">{t("result")}</div>
-                  <div className="text-2xl font-bold">
+                  <div className="text-xl sm:text-2xl font-bold">
                     {result.toFixed(2)} {toCurrency}
                   </div>
                   <div className="text-sm text-gray-400">
@@ -177,25 +177,25 @@ export function CurrencyConverter() {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <Card className="bg-gray-900/50 border-gray-800 overflow-hidden flex flex-col">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
+          <CardContent className="p-4 sm:p-6">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
               {t("conversionHistory")}
             </h3>
-            <div className="space-y-4 overflow-y-auto max-h-[60vh] pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+            <div className="space-y-3 sm:space-y-4 overflow-y-auto max-h-[40vh] sm:max-h-[60vh] pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
               {history.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="p-3 bg-gray-800/50 rounded-lg flex justify-between items-center"
+                  className="p-2 sm:p-3 bg-gray-800/50 rounded-lg flex justify-between items-center"
                 >
                   <div>
-                    <div className="font-medium">
+                    <div className="font-medium text-sm sm:text-base">
                       {item.amount} {item.from} → {item.result.toFixed(2)}{" "}
                       {item.to}
                     </div>
-                    <div className="text-sm text-gray-400">
+                    <div className="text-xs sm:text-sm text-gray-400">
                       {item.timestamp.toLocaleTimeString()}
                     </div>
                   </div>
