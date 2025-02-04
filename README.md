@@ -67,7 +67,3 @@ Remember to add `.env.local` to your `.gitignore` file to keep your API key secr
 Contributions are welcome! Please feel free to open an issue or submit a pull request.
 
 
-## License
-
-This project is licensed under the MIT License.
-
